@@ -53,7 +53,7 @@ export const options = {
 // See https://grafana.com/docs/k6/latest/examples/get-started-with-k6/ to learn more
 // about authoring k6 scripts.
 //
-export default function() {
-  http.get('https://test.k6.io');
+export default function () {
+  http.get("http://localhost:8080/login");
   sleep(1);
 }
