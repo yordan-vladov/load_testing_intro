@@ -19,7 +19,7 @@ export const options = {
   //   projectID: "",
   //   // The name of the test in the k6 Cloud UI.
   //   // Test runs with the same name will be grouped.
-  //   name: "script.js"
+  //   name: "example.js"
   // },
 
   // Uncomment this section to enable the use of Browser API in your tests.
@@ -53,8 +53,7 @@ export const options = {
 // See https://grafana.com/docs/k6/latest/examples/get-started-with-k6/ to learn more
 // about authoring k6 scripts.
 //
-export default function () {
-  http.get("http://localhost:8080/login");
+export default function() {
+  http.get("http://localhost:8080/");
   sleep(1);
 }
- 
