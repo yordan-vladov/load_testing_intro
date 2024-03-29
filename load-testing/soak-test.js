@@ -1,8 +1,12 @@
 import http from 'k6/http';
 
 export const options = {
-    vus: 10,
-    duration: '30s',
+    stages: [
+        { duration: '3h', target: 1000 }, 
+        { duration: '4h', target: 2000 }, 
+        { duration: '3h', target: 1500 }, 
+        { duration: '4h', target: 2000 }, 
+    ],
 };
 
 export default function () {
@@ -19,5 +23,4 @@ export default function () {
     };
 
     http.post(url, payload, params);
-
 }
