@@ -3,12 +3,13 @@ import { sleep } from 'k6';
 
 export const options = {
     stages: [
-        { duration: '2m', target: 50 }, 
-        { duration: '1m', target: 50 }, 
-        { duration: '1m', target: 0 },  
+        { duration: '10m', target: 50 },
+        { duration: '10m', target: 50 },
+        { duration: '10m', target: 50 },
+        { duration: '10m', target: 0 },
     ],
     thresholds: {
-        http_req_duration: ['p(95)<500'], 
+        http_req_duration: ['p(95)<500'],
     },
 };
 
@@ -26,6 +27,4 @@ export default function () {
     };
 
     http.post(url, payload, params);
-
-    sleep(5);
 };
