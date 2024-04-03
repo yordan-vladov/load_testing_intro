@@ -1,0 +1,15 @@
+
+import http from 'k6/http';
+import { sleep } from 'k6';
+
+export const options = {
+  executor: 'ramping-arrival-rate', 
+  stages: [
+    { duration: '2h', target: 20000 }, 
+  ],
+};
+
+export default () => {
+  const urlRes = http.get('http://localhost:8080');
+  sleep(1);
+}; 
