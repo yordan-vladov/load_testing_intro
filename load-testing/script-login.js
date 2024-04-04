@@ -1,10 +1,11 @@
 import http from 'k6/http';
 
 export const options = {
-    // A number specifying the number of VUs to run concurrently.
     vus: 10,
-    // A string specifying the total duration of the test run.
     duration: '30s',
+    tags: {
+        test_type: 'login'
+    }
 };
 
 export default function () {
@@ -21,5 +22,4 @@ export default function () {
     };
 
     http.post(url, payload, params);
-
 }
