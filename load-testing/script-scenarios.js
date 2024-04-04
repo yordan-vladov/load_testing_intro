@@ -7,12 +7,9 @@ export const options = {
             vus: 10,
             iterations: 100,
             startTime: "0s",
-        },
-        per_vu_scenario: {
-            executor: "per-vu-iterations",
-            vus: 10,
-            iterations: 10,
-            startTime: "10s",
+            tags: {
+                test_type: 'shared_iterations'
+            }
         },
     },
 };
